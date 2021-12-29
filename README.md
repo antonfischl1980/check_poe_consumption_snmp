@@ -7,10 +7,10 @@ It queries a switch with SNMP and produces warnings if these values exceed a giv
 
 ## Installing
 
-copy check_poe_consumption_snmp.sh to your Nagios/Icinga plugin directory (usually /usr/lib64/nagios/plugins/ )
-Edit your Nagios/Icinga config accordingly.
-For Icinga2 you can copy check_poe_consumption_snmp.conf to your CheckCommand-Definitions (usually /usr/share/icinga2/include/plugins-contrib.d/ )
-If you are running icinweb2-module-graphite you can place the provided check_poe_consumption_snmp.ini into the template directory (usually /usr/share/icingaweb2/modules/graphite/templates/ or /etc/icingaweb2/modules/graphite/templates/ )
+copy `check_poe_consumption_snmp.sh` to your Nagios/Icinga plugin directory (usually `/usr/lib64/nagios/plugins/` )  
+Edit your Nagios/Icinga config accordingly.  
+For Icinga2 you can copy `check_poe_consumption_snmp.conf` to your CheckCommand-Definitions (usually `/usr/share/icinga2/include/plugins-contrib.d/` )    
+If you are running `icinweb2-module-graphite` you can place the provided `check_poe_consumption_snmp.ini` into the template directory (usually `/usr/share/icingaweb2/modules/graphite/templates/` or `/etc/icingaweb2/modules/graphite/templates/` )
 
 ## Usage
 
