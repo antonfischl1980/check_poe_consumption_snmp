@@ -108,7 +108,7 @@ echo "$SNMP_VALUES" | awk -v WARNING="$WARNING" -v CRITICAL="$CRITICAL" '
         perfdata=sprintf("%s pse_%d_watts=%.2fW;%.2f;%.2f;0;%.2f", perfdata, pse, watts_used[pse], warn_watts, crit_watts, watts_max[pse])
         perfdata=sprintf("%s pse_%d_percent=%.2f%%;%.2f;%.2f;0;100", perfdata, pse, watts_used_percent, warn_percent, crit_percent)
       }else{
-        # SNMP is reporting nonsense value fpr watts_max
+        # SNMP is reporting nonsense value for watts_max
         printf("CRITIAL: PSE %d reports %d Watts as maximum - something is not right here\n", pse, watts_max[pse])
         exit_value=2;
       }
