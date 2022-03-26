@@ -1,4 +1,5 @@
 # check_poe_consumption_snmp
+[![ShellCheck](https://github.com/antonfischl1980/check_poe_consumption_snmp/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/antonfischl1980/check_poe_consumption_snmp/actions/workflows/shellcheck.yml)
 
 ## Intro
 
