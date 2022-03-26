@@ -47,7 +47,7 @@ echo "$CRITICAL"|grep -qE "^[0-9]*$" || usage
 # Resets position of first non-option argument
 shift "$((OPTIND-1))"
 
-SNMP_VALUES="$(snmpbulkwalk -v$SNMP_VERSION -c "$SNMP_COMMUNITY" "$SNMP_HOST" "$SNMP_OID" -On -OU 2>&1)"
+SNMP_VALUES="$(snmpbulkwalk -v"$SNMP_VERSION" -c "$SNMP_COMMUNITY" "$SNMP_HOST" "$SNMP_OID" -On -OU 2>&1)"
 SNMP_EXIT_CODE=$?
 
 # snmpbulkwalk didn't exit cleanly....
@@ -57,8 +57,7 @@ if [ $SNMP_EXIT_CODE -ne 0 ]; then
 fi
 
 # no OIDs a
-echo "$SNMP_VALUES" | grep -q "No Such Object"
-if [ $? -eq 0 ];then
+if echo "$SNMP_VALUES" | grep -q "No Such Object"; then
   echo "UNKNOWN: $SNMP_VALUES"
   exit 3
 fi
