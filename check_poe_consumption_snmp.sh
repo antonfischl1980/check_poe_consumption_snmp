@@ -47,7 +47,7 @@ echo "$CRITICAL"|grep -qE "^[0-9]*$" || usage
 # Resets position of first non-option argument
 shift "$((OPTIND-1))"
 
-SNMP_VALUES="$(snmpbulkwalk -v"$SNMP_VERSION" -c "$SNMP_COMMUNITY" "$SNMP_HOST" "$SNMP_OID" -On -OU 2>&1)"
+SNMP_VALUES="$(snmpbulkwalk -v"$SNMP_VERSION" -On -OU -c "$SNMP_COMMUNITY" "$SNMP_HOST" "$SNMP_OID" 2>&1)"
 SNMP_EXIT_CODE=$?
 
 # snmpbulkwalk didn't exit cleanly....
